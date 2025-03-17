@@ -1,0 +1,81 @@
+@import url('./styles/header.css');
+
+:root {
+    --font-principal: "Montserrat", sanserif;
+    --azul: #252B42;
+    --cinza: #737373;
+    --branco: #FFFFFF;
+}
+
+body {
+    font-family: var(--font-principal);
+    background: #005C97;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #363795, #005C97);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #363795, #005C97);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container__secao {
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo fique empilhado */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente se necessário */
+    text-align: center;
+    padding: 2em; /* Ajuste para espaçamento adequado */
+}
+
+.container__secao__div {
+   padding: 1em;
+   flex-direction: column;
+   align-items: center;
+   margin: 1em;
+}
+
+.container__secao__texto {
+    color: var(--branco);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+}
+.container__secao__titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--branco);
+    width: 100vw;
+    padding: 1em;
+}
+.container__secao__texto2 {
+    font-size: 18px; /* Tamanho adequado para mobile */
+    font-weight: 400;
+    padding: 1em;
+    max-width: 24ch; /* Ajustado para quebrar em 3 linhas no mobile */
+    line-height: 1.4; /* Melhora a leitura */
+    text-align: center;
+    word-wrap: break-word;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+@media (min-width: 768px) {
+    .container__secao__texto2 {
+        max-width: 30ch;
+        font-size: 20px;
+    }
+}
+.container__secao__butao {
+    width: 150px;
+    height: 42px;
+    border-radius: 20px;
+    background: transparent;
+    color: var(--branco);
+    font-size: 14px;
+    font-weight: bold;
+    font-family: var(--font-principal);
+    border: 1px solid var(--branco); /* Define a borda branca e mais fina */
+}
+.secao__imagem {
+    width: 60vw;
+    height: auto; /* Mantém a proporção original da imagem */
+    margin-top: 1em; /* Espaço entre o texto e a imagem */
+}
