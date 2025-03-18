@@ -6,34 +6,49 @@
     --cinza: #737373;
     --branco: #FFFFFF;
 }
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Remove a rolagem lateral */
+}
 
 body {
-    font-family: var(--font-principal);
-    background: #005C97;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #363795, #005C97);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #363795, #005C97);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover; /* Garante que o gradiente preencha a tela */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    justify-content: center;
 }
 
 .container__secao {
     display: flex;
-    flex-direction: column; /* Garante que o conteúdo fique empilhado */
+    flex-direction: column; /* Empilha os itens no mobile */
     align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente se necessário */
+    justify-content: center; /* Centraliza verticalmente */
     text-align: center;
-    padding: 2em; /* Ajuste para espaçamento adequado */
+    width: 100%;
+    min-height: 100vh; /* Faz a seção ocupar toda a altura da tela */
+    padding: 2em;
 }
 
 .container__secao__div {
-   padding: 1em;
-   flex-direction: column;
-   align-items: center;
-   margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px; /* Mantém um limite para textos largos */
 }
 
 .container__secao__texto {
+    font-family: var(--font-principal);
     color: var(--branco);
     font-size: 16px;
     font-weight: bold;
@@ -41,6 +56,7 @@ body {
     padding: 1em;
 }
 .container__secao__titulo {
+    font-family: var(--font-principal);    
     font-size: 40px;
     font-weight: bold;
     color: var(--branco);
@@ -48,8 +64,10 @@ body {
     padding: 1em;
 }
 .container__secao__texto2 {
+    font-family: var(--font-principal);
     font-size: 18px; /* Tamanho adequado para mobile */
     font-weight: 400;
+    color: var(--branco);
     padding: 1em;
     max-width: 24ch; /* Ajustado para quebrar em 3 linhas no mobile */
     line-height: 1.4; /* Melhora a leitura */
@@ -75,7 +93,60 @@ body {
     border: 1px solid var(--branco); /* Define a borda branca e mais fina */
 }
 .secao__imagem {
-    width: 60vw;
-    height: auto; /* Mantém a proporção original da imagem */
-    margin-top: 1em; /* Espaço entre o texto e a imagem */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Evita margens extras */
+}
+
+.section__container {
+    display: flex;
+    flex-direction: column; /* Empilha os itens */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaço entre os itens */
+    width: 100%;
+    padding: 20px 0;
+}
+
+.section__secundary {
+    width: 90%; /* Ocupa 90% da largura, sem ultrapassar */
+    max-width: 320px; /* Máximo de 320px */
+    height: 220px; /* Ajusta automaticamente */
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos internos */
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌐 Para telas maiores, exibir em linha */
+@media (min-width: 768px) {
+    .section__container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap; /* Quebra caso não caiba na tela */
+    }
+
+    .section__secundary {
+        width: 280px;
+        height: 220px;
+        margin: 10px; /* Ajuste fino no espaçamento */
+    }
+}
+
+.section__secundary__titulo {
+    font-family: var(--font-principal);
+    font-weight: bold;
+    padding: 1em;
+}
+
+.section__secundary__texto {
+    font-family: var(--font-principal);
+    color: var(--cinza);
+    font-weight: 400;
+    padding: 1em;
 }

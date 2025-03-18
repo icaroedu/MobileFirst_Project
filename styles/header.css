@@ -1,34 +1,30 @@
+/* Estilização do Cabeçalho */
 .cabecalho {
+    width: 100vw; /* Ocupa 100% da largura da tela */
+    max-width: 100%; /* Evita estouro lateral */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background-color: #fff;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
-
+/* Container do logo e menu */
 .container {
     display: flex;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.lista-menu {
-    display: flex;
-    list-style: none;
     gap: 20px;
 }
 
-.lista-menu__item a {
-    text-decoration: none;
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #333;
-    font-size: 1rem;
 }
 
+/* Ícones do header */
 .icones {
     display: flex;
     align-items: center;
@@ -41,8 +37,33 @@
     cursor: pointer;
 }
 
-/* 🌐 Estilos para telas menores */
+/* Estilização do menu */
+.lista-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.lista-menu__item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.lista-menu__item a:hover {
+    color: #007bff;
+}
+
+/* 🔹 Menu responsivo - Mobile First */
+.menu-toggle {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
+    /* Oculta o menu padrão */
     .lista-menu {
         display: none;
         flex-direction: column;
@@ -53,13 +74,27 @@
         padding: 15px;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
+        width: 200px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
+    /* Mostra o menu ao ativar */
     .lista-menu.active {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
     }
 
+    /* Estiliza os itens do menu */
     .lista-menu__item {
         padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Ícone do menu hambúrguer */
+    .menu-toggle {
+        display: block;
     }
 }

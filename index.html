@@ -10,26 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <title>E-commerceUI</title>
+    <title>E-commerce</title>
 </head>
 
 <body>
     <header class="cabecalho">
         <div class="container">
-            <span class="logo">Name test</span>
-            <nav class="menu">
-                <ul class="lista-menu">
-                    <li class="lista-menu__item"><a href="#">Home</a></li>
-                    <li class="lista-menu__item"><a href="#">Product</a></li>
-                    <li class="lista-menu__item"><a href="#">Pricing</a></li>
-                    <li class="lista-menu__item"><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            <img src="img/Vector (3).svg" alt="Menu" class="menu-toggle" id="menu-toggle">
+            <span class="logo">Name Test</span>
         </div>
+    
+        <nav class="menu">
+            <ul class="lista-menu" id="menu">
+                <li class="lista-menu__item"><a href="#">Home</a></li>
+                <li class="lista-menu__item"><a href="#">Product</a></li>
+                <li class="lista-menu__item"><a href="#">Pricing</a></li>
+                <li class="lista-menu__item"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    
         <div class="icones">
-            <a href="#"><img src="img/vector (1).svg" alt="Pesquisar por algum produto"></a>
-            <a href="#"><img src="img/Vector (2).svg" alt="Carrinho de compras"></a>
-            <a href="#" id="menu-toggle"><img src="img/Vector (3).svg" alt="Menu"></a>
+            <a href="#"><img src="img/vector (1).svg" alt="Pesquisar"></a>
+            <a href="#"><img src="img/Vector (2).svg" alt="Carrinho"></a>
         </div>
     </header>
     <section class="container__secao">
@@ -43,9 +45,29 @@
         <img src="./img/png-cover.png" class="secao__imagem" alt="soda de limão bubly">
     </section>
 
+    <div class="section__container">
+        <section class="section__secundary">
+            <img src="img/icn resize icn-md.svg" class="section__secundary__imagem" alt="Ícone">
+            <h2 class="section__secundary__titulo">Job Security</h2>
+            <p class="section__secundary__texto">The quick fox jumps over the lazy dog</p>
+        </section>
+    
+        <section class="section__secundary">
+            <img src="img/icn resize icn-md.svg" class="section__secundary__imagem" alt="Ícone">
+            <h2 class="section__secundary__titulo">Job Security</h2>
+            <p class="section__secundary__texto">The quick fox jumps over the lazy dog</p>
+        </section>
+    
+        <section class="section__secundary">
+            <img src="img/icn resize icn-md.svg" class="section__secundary__imagem" alt="Ícone">
+            <h2 class="section__secundary__titulo">Job Security</h2>
+            <p class="section__secundary__texto">The quick fox jumps over the lazy dog</p>
+        </section>
+    </div>
+
     <script>
         document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.querySelector(".lista-menu").classList.toggle("active");
+            document.getElementById("menu").classList.toggle("active");
         });
     </script>
 </body>
