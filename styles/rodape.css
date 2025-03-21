@@ -1,0 +1,11 @@
+.rodape {
+    background-color: var(--branco);
+    width: 100%;
+    padding-top: 50px; /* Espaço extra no topo */
+    padding-bottom: 50px; /* Espaço no final */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    min-height: 200px; /* Altura mínima do rodapé */
+}

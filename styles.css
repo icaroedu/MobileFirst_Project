@@ -1,5 +1,5 @@
 @import url('./styles/header.css');
-
+@import url('./styles/rodape.css');
 :root {
     --font-principal: "Montserrat", sanserif;
     --azul: #252B42;
@@ -100,12 +100,27 @@ body {
 
 .section__container {
     display: flex;
-    flex-direction: column; /* Empilha os itens */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    gap: 20px; /* Espaço entre os itens */
-    width: 100%;
-    padding: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(-50%); /* Sobreposição suave do rodapé */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section__container {
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-30%); /* Ajuste menor para telas pequenas */
+        width: 90%;
+    }
+
+    .rodape {
+        padding-top: 30px; /* Ajuste para manter a harmonia */
+    }
 }
 
 .section__secundary {
